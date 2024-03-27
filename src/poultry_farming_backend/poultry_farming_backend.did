@@ -1,0 +1,15 @@
+service: () -> {
+    DamagedEggs: (text, nat64) -> (record {id:principal; createdAt:nat64; sold:nat64; available:nat64; damagedEggs:nat64; laidEggs:nat64});
+    LaidEggs: (text, nat64) -> (record {id:principal; createdAt:nat64; sold:nat64; available:nat64; damagedEggs:nat64; laidEggs:nat64});
+    SOldEggs: (text, nat64) -> (record {id:principal; createdAt:nat64; sold:nat64; available:nat64; damagedEggs:nat64; laidEggs:nat64});
+    SoldBroilers: (nat64, nat64, text) -> (record {id:principal; age:nat64; createdAt:nat64; sold:nat64; numberOfBroilers:nat64; available:nat64; breed:text});
+    SoldLayers: (nat64, nat64, text) -> (record {id:principal; age:nat64; createdAt:nat64; sold:nat64; numberOfLayers:nat64; available:nat64; breed:text});
+    createBroilers: (nat64, nat64, text) -> (record {id:principal; age:nat64; createdAt:nat64; sold:nat64; numberOfBroilers:nat64; available:nat64; breed:text});
+    createLayers: (nat64, nat64, text) -> (record {id:principal; age:nat64; createdAt:nat64; sold:nat64; numberOfLayers:nat64; available:nat64; breed:text});
+    getAllBroilers: () -> (vec record {id:principal; age:nat64; createdAt:nat64; sold:nat64; numberOfBroilers:nat64; available:nat64; breed:text}) query;
+    getAllEggs: () -> (vec record {id:principal; createdAt:nat64; sold:nat64; available:nat64; damagedEggs:nat64; laidEggs:nat64}) query;
+    getAllLayers: () -> (vec record {id:principal; age:nat64; createdAt:nat64; sold:nat64; numberOfLayers:nat64; available:nat64; breed:text}) query;
+    getBroilerById: (principal) -> (opt record {id:principal; age:nat64; createdAt:nat64; sold:nat64; numberOfBroilers:nat64; available:nat64; breed:text}) query;
+    getEggById: (principal) -> (opt record {id:principal; createdAt:nat64; sold:nat64; available:nat64; damagedEggs:nat64; laidEggs:nat64}) query;
+    getLayerById: (principal) -> (opt record {id:principal; age:nat64; createdAt:nat64; sold:nat64; numberOfLayers:nat64; available:nat64; breed:text}) query;
+}

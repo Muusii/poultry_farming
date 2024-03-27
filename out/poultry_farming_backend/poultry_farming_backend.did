@@ -1,0 +1,7 @@
+service: () -> {
+    createBroilers: (nat64, nat64, text) -> (record {id:principal; age:nat64; createdAt:nat64; sold:nat64; numberOfBroilers:nat64; available:nat64; breed:text});
+    getAllBroilers: () -> (vec record {id:principal; age:nat64; createdAt:nat64; sold:nat64; numberOfBroilers:nat64; available:nat64; breed:text}) query;
+    getBroilerById: (principal) -> (opt record {id:principal; age:nat64; createdAt:nat64; sold:nat64; numberOfBroilers:nat64; available:nat64; breed:text}) query;
+    getTotalAvailableBroilers: () -> (nat64) query;
+    sellBroilers: (principal, text, nat64) -> (record {id:principal; age:nat64; createdAt:nat64; sold:nat64; numberOfBroilers:nat64; available:nat64; breed:text});
+}
